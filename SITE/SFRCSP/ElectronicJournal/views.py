@@ -2,7 +2,19 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from .models import *
 
-# Create your views here.
-def testDef(request):
-  studid = Student.objects.get(personid = 1)
-  return render(request, 'ElectronicJournal/index.html', {'testvar' : studid.lastname,})
+# Функция представления для главной страницы
+def MainPageDef(request):
+
+  attrList = {
+    'title' : 'Главная страница',
+  }
+  return render(request, 'ElectronicJournal\mainPageTemplate.html', attrList)
+
+#Тестовая функция
+def TableTestingDef(request):
+
+  #Список передаваемых атрибутов в шаблон
+  attrList = {
+    'title' : 'Test Page',
+  }
+  return render(request, 'ElectronicJournal\TableTestingTemplate.html', attrList)
