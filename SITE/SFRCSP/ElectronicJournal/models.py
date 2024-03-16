@@ -17,8 +17,12 @@ class Active(models.Model):
     grade = models.IntegerField(db_column='Grade', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        verbose_name = "Событие"
+        verbose_name_plural = "События"
         db_table = 'active'
+
+    def __bigint__(self):
+        return self.id
 
 
 class Groupa(models.Model):
@@ -27,9 +31,12 @@ class Groupa(models.Model):
     course = models.IntegerField(db_column='Course', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        verbose_name = "Группы"
+        verbose_name_plural = "Группы"
         db_table = 'groupa'
 
+    def __str__(self):
+        return self.nam
 
 class Pair(models.Model):
     pairid = models.BigAutoField(db_column='PairId', primary_key=True)  # Field name made lowercase.
@@ -41,8 +48,13 @@ class Pair(models.Model):
     num = models.IntegerField(db_column='Num', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        verbose_name = "Пары"
+        verbose_name_plural = "Пары"
         db_table = 'pair'
+
+    def __str__(self):
+        subject = Subject.objects.get(subjectid=self.subjectid).nam
+        return self.nam + " --- " + str(self.num) + " --- " + subject + " --- " + str(self.dat)
 
 
 class Pairactive(models.Model):
@@ -50,8 +62,12 @@ class Pairactive(models.Model):
     time = models.DateTimeField(blank=True, null=True)
 
     class Meta:
-        managed = False
+        verbose_name = "Активность на паре"
+        verbose_name_plural = "Активность на паре"
         db_table = 'pairactive'
+
+    def __str__(self):
+        return str(self.pair_id) + " --- " + str(self.time)
 
 
 class Student(models.Model):
@@ -67,8 +83,12 @@ class Student(models.Model):
     status = models.IntegerField(db_column='Status', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        verbose_name = "Студент"
+        verbose_name_plural = "Студенты"
         db_table = 'student'
+
+    def __str__(self):
+        return self.lastname + " " + self.firstname + " " + self.middlename
 
 
 class Subject(models.Model):
@@ -76,8 +96,12 @@ class Subject(models.Model):
     nam = models.CharField(db_column='Nam', max_length=50, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        verbose_name = "Предмет"
+        verbose_name_plural = "Предметы"
         db_table = 'subject'
+
+    def __str__(self):
+        return self.nam
 
 
 class Teacher(models.Model):
@@ -92,8 +116,13 @@ class Teacher(models.Model):
     chatid = models.IntegerField(db_column='ChatID', blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        verbose_name = "Преподаватель"
+        verbose_name_plural = "Преподаватели"
         db_table = 'teacher'
+
+    def __str__(self):
+        str = self.lastname + " " + self.firstname + " " + self.middlename
+        return str 
 
 
 class Typeactive(models.Model):
@@ -102,8 +131,12 @@ class Typeactive(models.Model):
     method = models.CharField(max_length=100, blank=True, null=True)
 
     class Meta:
-        managed = False
+        verbose_name = "Тип события"
+        verbose_name_plural = "Тип события"
         db_table = 'typeactive'
+
+    def __str__(self):
+        return self.nam
 
 
 class Typesubject(models.Model):
@@ -111,5 +144,9 @@ class Typesubject(models.Model):
     nam = models.CharField(db_column='Nam', max_length=50, blank=True, null=True)  # Field name made lowercase.
 
     class Meta:
-        managed = False
+        verbose_name = "Тип предмета"
+        verbose_name_plural = "Тип предмета"
         db_table = 'typesubject'
+
+    def __str__(self):
+        return self.nam
