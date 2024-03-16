@@ -133,4 +133,4 @@ STATICFILES_DIRS = []
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-AUTH_USER_MODEL = 'ElectronicJournal.CustomUser' #Использование не стандартной таблицы пользователя
+AUTH_USER_MODEL = 'ElectronicJournal.CustomUser' #Использование нестандартной таблицы пользователя
