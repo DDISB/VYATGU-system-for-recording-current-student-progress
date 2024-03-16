@@ -7,5 +7,27 @@
 {% endblock head %}
 
 {% block main %}
-<div class="test">AAAAAAAA</div>
+
+<table>
+  <thead>
+    <tr>
+      <th>id</th>
+      <th>Фамилия</th>
+      <th>Имя</th>
+      <th>id группы</th>
+      <th>Чат id</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for student in students %}
+    <tr>
+      <th>{{student.personid}}</th>
+      <th>{{student.lastname}}</th>
+      <th>{{student.firstname}}</th>
+      <th>{{student.groupid}}</th>
+      <th> <input type="text">  {{student.chatid}}</th>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
 {% endblock main %}

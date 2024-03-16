@@ -31,14 +31,14 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'ElectronicJournal.apps.ElectronicjournalConfig'
+INSTALLED_APPS = [ #Список подключенных приложений
+    'django.contrib.admin', #Администраторская часть сайта.
+    'django.contrib.auth', #Cистема аутентификации.
+    'django.contrib.contenttypes', #Фреймворк типов данных.
+    'django.contrib.sessions',#Фреймвор сессий.
+    'django.contrib.messages', #Фреймворк сообщений.
+    'django.contrib.staticfiles', #Фреймворк для работы со статическими файлами.
+    'ElectronicJournal.apps.ElectronicjournalConfig' #Приложение журнала
 ]
 
 MIDDLEWARE = [
@@ -132,3 +132,5 @@ STATICFILES_DIRS = []
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+AUTH_USER_MODEL = 'ElectronicJournal.CustomUser' #Использование не стандартной таблицы пользователя

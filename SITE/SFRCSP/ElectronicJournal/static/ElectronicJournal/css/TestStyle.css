@@ -1,4 +1,13 @@
 body {
-  background-color: black;
-  color: white;
+  background-color: rgb(255, 247, 236);
+  color:black;
+}
+
+th {
+  text-align: left;
+  border: 1px solid black;
+}
+
+tr {
+  border: 1px solid black;
 }

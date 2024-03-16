@@ -12,9 +12,10 @@ def MainPageDef(request):
 
 #Тестовая функция
 def TableTestingDef(request):
-
+  students = Student.objects.all()
   #Список передаваемых атрибутов в шаблон
   attrList = {
     'title' : 'Test Page',
+    'students' : students,
   }
   return render(request, 'ElectronicJournal\TableTestingTemplate.html', attrList)
