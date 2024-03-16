@@ -38,7 +38,9 @@ INSTALLED_APPS = [ #Список подключенных приложений
     'django.contrib.sessions',#Фреймвор сессий.
     'django.contrib.messages', #Фреймворк сообщений.
     'django.contrib.staticfiles', #Фреймворк для работы со статическими файлами.
-    'ElectronicJournal.apps.ElectronicjournalConfig' #Приложение журнала
+    'ElectronicJournal.apps.ElectronicjournalConfig', #Приложение журнала
+    'authentication.apps.AuthenticationConfig', #Приложения для аунтификации
+    'crispy_forms', #для bootstrap
 ]
 
 MIDDLEWARE = [
@@ -132,5 +134,5 @@ STATICFILES_DIRS = []
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 # AUTH_USER_MODEL = 'ElectronicJournal.CustomUser' #Использование нестандартной таблицы пользователя

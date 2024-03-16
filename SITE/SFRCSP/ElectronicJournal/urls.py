@@ -1,8 +1,10 @@
+from django.contrib.auth import views
 from django.urls import path, re_path
 
-from .views import *
+from . import views
 
 urlpatterns = [
-  path('', MainPageDef, name='mainPage'),
-  path('test', TableTestingDef),
+  path('test', views.TableTestingDef),
+  path('journal', views.JournalDef, name='Journal'),
+  path('', views.MainPageDef, name='mainPage'),
 ]
