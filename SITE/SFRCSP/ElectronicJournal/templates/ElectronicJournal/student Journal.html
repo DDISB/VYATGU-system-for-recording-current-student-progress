@@ -1,0 +1,54 @@
+{% extends 'ElectronicJournal/base.html' %}
+{% load static %}
+
+{% block nav %}
+    <!-- Навигация -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container">
+        <!-- Первый пункт(лого) -->
+        <!-- p-0 без отступа -->
+        <a class="navbar-brand p-0" href="login.html"> Выход </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <!-- Пункты -->
+          <ul class="navbar-nav">
+            <!-- Выпадающий список -->
+            <li class="nav-item">
+              <div class="dropdown">
+                <button
+                  class="btn btn-info dropdown-toggle"
+                  type="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  Предмет
+                </button>
+                <!-- Элементы списка -->
+                <ul class="dropdown-menu">
+                  <li>
+                    <a class="dropdown-item" href="#">Основы информатики</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Программирование</a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#">Математика</a>
+                  </li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+{% endblock %}

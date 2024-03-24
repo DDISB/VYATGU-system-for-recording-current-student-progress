@@ -1,0 +1,13 @@
+body {
+  background-color: rgb(110, 220, 255);
+}
+.btn-info {
+  background-color: rgb(110, 220, 255);
+  color: black;
+}
+h3 {
+  margin-top: 1em;
+}
+table {
+  border-radius: 1em;
+}

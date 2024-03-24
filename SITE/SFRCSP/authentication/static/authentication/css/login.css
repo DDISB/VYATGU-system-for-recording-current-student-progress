@@ -1,0 +1,18 @@
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1em;
+  border-radius: 1em;
+}
+h1 {
+  margin-bottom: 1em;
+}
+.btn {
+  width: 7em;
+  margin-top: 1em;
+}
+body {
+  background-color: rgb(110, 220, 255);
+}
