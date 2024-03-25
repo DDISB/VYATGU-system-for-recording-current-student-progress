@@ -33,7 +33,7 @@ def JournalDef(request):
     
   # student = Student.objects.all()
   attrList = {
-    'title' : 'Test Page',
+    'title' : 'Журнал',
     'student' : current_student
   }
-  return render(request, "ElectronicJournal/test.html", attrList)
+  return render(request, "ElectronicJournal/student Journal.html", attrList)
